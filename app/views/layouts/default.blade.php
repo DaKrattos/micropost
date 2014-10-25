@@ -26,6 +26,9 @@
         <li>
           {{ HTML::linkAction('posts.index','Posts') }}
         </li>
+        <li>
+          {{ HTML::linkAction('users.index','Users') }}
+        </li>
       </ul>
     </section>
   </nav>
