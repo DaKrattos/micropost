@@ -10,4 +10,9 @@ class User extends \Eloquent {
 	// Don't forget to fill this array
 	protected $fillable = ['name','lastname','email'];
 
+  public function posts()
+  {
+      return $this->hasMany('Post');
+  }
+
 }

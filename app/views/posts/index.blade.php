@@ -8,7 +8,8 @@
     <div class="row">
       <div class="columns large-11">
         {{ HTML::linkAction('posts.show',$post->title,[$post->id],[]) }}<br>
-        {{ $post->created_at }}
+        {{ $post->user->name . ' ' . $post->user->lastname }}<br>
+        <small>{{ $post->created_at }}</small>
       </div>
       <div class="columns large-1">
         {{ HTML::linkAction('posts.edit','Edit',[$post->id],['class'=>'button tiny']) }}

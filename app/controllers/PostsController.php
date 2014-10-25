@@ -9,7 +9,7 @@ class PostsController extends \BaseController {
 	 */
 	public function index()
 	{
-		$posts = Post::all();
+		$posts = Post::orderBy('created_at','desc')->get();
 
 		return View::make('posts.index', compact('posts'));
 	}
@@ -21,7 +21,8 @@ class PostsController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('posts.create');
+		$users = User::lists('name','id');
+		return View::make('posts.create',compact('users'));
 	}
 
 	/**
@@ -65,8 +66,9 @@ class PostsController extends \BaseController {
 	public function edit($id)
 	{
 		$post = Post::find($id);
+		$users = User::lists('name','id');
 
-		return View::make('posts.edit', compact('post'));
+		return View::make('posts.edit', compact('post','users'));
 	}
 
 	/**
