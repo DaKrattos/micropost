@@ -5,6 +5,7 @@
 
     {{ Form::label('title', 'Title') }}
     {{ Form::text('title') }}
+    {{ $errors->first('title','<small class="error">:message</small>') }}
 
     {{ Form::label('body', 'Body') }}
     {{ Form::textarea('body') }}

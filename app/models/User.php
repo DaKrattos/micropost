@@ -4,7 +4,9 @@ class User extends \Eloquent {
 
 	// Add your validation rules here
 	public static $rules = [
-		// 'title' => 'required'
+		'name' => 'required',
+    'lastname' => 'required',
+    'email' => 'required|email'
 	];
 
 	// Don't forget to fill this array
